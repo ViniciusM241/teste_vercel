@@ -2,25 +2,12 @@
     "version": 2,
     "builds": [
       {
-        "src": "backend/index.js",
+        "src": "index.js",
         "use": "@vercel/node"
       }
     ],
     "routes": [
-      {
-        "src": "/api/register",
-        "methods": ["POST"],
-        "dest": "backend/index.js"
-      },
-      {
-        "src": "/api/login",
-        "methods": ["POST"],
-        "dest": "backend/index.js"
-      },
-      {
-        "src": "/api/user",
-        "methods": ["GET"],
-        "dest": "backend/index.js"
-      }
+      { "src": "/(.*)", "dest": "index.js" }
     ]
-}  
+  }
+  
